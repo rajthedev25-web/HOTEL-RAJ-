@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon All Menu (Side Drawer)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="all-menu.css"/>
+</head>
+<body>
+
+  <!-- Yeh button menu open karega (real Amazon mein header mein hota hai) -->
+  <button id="openMenuBtn" class="open-btn">
+    <i class="fas fa-bars"></i> All
+  </button>
+
+  <!-- Overlay background (dark shade jab menu open) -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Side Menu Drawer -->
+  <div id="sideMenu" class="side-menu">
+    <div class="menu-header">
+      <button id="closeMenuBtn" class="close-btn">×</button>
+      <h2>Hello, sign in</h2>
+    </div>
+
+    <div class="menu-content">
+      <ul class="menu-list">
+        <li class="section-title">Digital Content & Devices</li>
+        <li>Prime Video <i class="fas fa-chevron-right"></i></li>
+        <li>Amazon Music <i class="fas fa-chevron-right"></i></li>
+        <li>Kindle e-readers & Books <i class="fas fa-chevron-right"></i></li>
+        <li>Amazon Appstore <i class="fas fa-chevron-right"></i></li>
+
+        <li class="section-title">Shop by Department</li>
+        <li>Electronics <i class="fas fa-chevron-right"></i></li>
+        <li>Computers <i class="fas fa-chevron-right"></i></li>
+        <li>Smart Home <i class="fas fa-chevron-right"></i></li>
+        <li>Arts & Crafts <i class="fas fa-chevron-right"></i></li>
+        <li>See all <i class="fas fa-chevron-down"></i></li>
+
+        <li class="section-title">Programs & Features</li>
+        <li>Gift Cards <i class="fas fa-chevron-right"></i></li>
+        <li>Shop by Interest <i class="fas fa-chevron-right"></i></li>
+        <li>Amazon Live <i class="fas fa-chevron-right"></i></li>
+        <li>International Shopping <i class="fas fa-chevron-right"></i></li>
+        <li>See all <i class="fas fa-chevron-down"></i></li>
+
+        <li class="section-title">Help & Settings</li>
+        <li>Your Account</li>
+        <li>English <i class="fas fa-chevron-right"></i></li>
+        <li>United States <i class="fas fa-flag-usa"></i></li>
+        <li>Customer Service</li>
+        <li>Sign in</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Simple JS for open/close menu -->
+  <script>
+    const openBtn = document.getElementById('openMenuBtn');
+    const closeBtn = document.getElementById('closeMenuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+
+    openBtn.addEventListener('click', () => {
+      sideMenu.classList.add('open');
+      overlay.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sideMenu.classList.remove('open');
+      overlay.classList.remove('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sideMenu.classList.remove('open');
+      overlay.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
